@@ -8,7 +8,7 @@ const myPosts = require("./post");
 // ESECUZIONE
 
 app.get( "/", (req,res) => {
-res.send("Server del mio blog")
+res.send("Server del mio blog") //ritorna testo
 });
 
 app.get("/bacheca", (req,res) => {
@@ -16,7 +16,7 @@ app.get("/bacheca", (req,res) => {
         post : myPosts,
         totale : myPosts.length
     }
-    res.json(data)
+    res.json(data) //ritorna un oggetto: con un array di oggetti(in cui ogni oggetto è un post) e un numero che sarebbe il numero di oggetti dell'array
 });
 
 app.use(express.static("public"));
